@@ -4,6 +4,7 @@ const mainDiv = document.getElementById('main-div')
 const postsDiv = document.getElementById('posts')
 const spinnerDiv = document.getElementById('spinner-box')
 const loadBtn = document.getElementById('load-btn')
+const endBox = document.getElementById('end-box')
 
 // mainDiv.innerHTML = '<h3>hello from main.js</h3>'
 
@@ -50,6 +51,14 @@ const getData = () => {
                 `
             })
             }, 100)
+            console.log(response.size)
+            if (response.size === 0 ) {
+                endBox.textContent = 'No Posts added yet....'
+            }
+            else if (response.size <= visible){
+                loadBtn.classList.add('not-visible')
+                endBox.textContent = 'No more posts to load...'
+            }
 
         },
         error: function(error){
