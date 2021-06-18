@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'posts/main.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block title %}
+    Blog Home
+{% endblock title %}
+
+{% block content %}
+    {% for q in qs %}
+        <h2 class="title" id="title-{{ q.id }}">{{ q.title }}</h2>
+        <p class="body" id="body-{{ q.id }}">{{ q.body }}</p> <br />
+    {% endfor %}
+    <div id="main-div"></div>
+{% endblock content %}
