@@ -10,9 +10,17 @@
 {% endblock title %}
 
 {% block content %}
-    {% for q in qs %}
-        <h2 class="title" id="title-{{ q.id }}">{{ q.title }}</h2>
-        <p class="body" id="body-{{ q.id }}">{{ q.body }}</p> <br />
-    {% endfor %}
+{#    {% for q in qs %}#}
+{#        <h2 class="title" id="title-{{ q.id }}">{{ q.title }}</h2>#}
+{#        <p class="body" id="body-{{ q.id }}">{{ q.body }}</p> <br />#}
+{#    {% endfor %}#}
+
+    <div id="posts"></div>
+    <div id="spinner-box">
+        <div class="spinner-border" role="status"></div>
+    </div>
     <div id="main-div"></div>
+    <div class="text-center mb-3" id="end-box">
+        <button class="btn btn-secondary" id="load-btn">Load More...</button>
+    </div>
 {% endblock content %}
